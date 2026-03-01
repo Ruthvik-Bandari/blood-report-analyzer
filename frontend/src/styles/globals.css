@@ -1,0 +1,265 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * ═══════════════════════════════════════════════════════════════
+ * BLOOD REPORT ANALYZER — MULTI-THEME SYSTEM
+ * 7 Color Themes × 2 Modes (Light/Dark) = 14 Combinations
+ * ═══════════════════════════════════════════════════════════════
+ */
+
+@layer base {
+  /* ────────────────────────────────────────────
+   * DEFAULT THEME: Zinc (Neutral Medical)
+   * ──────────────────────────────────────────── */
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --radius: 0.625rem;
+
+    /* Health semantic colors */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 0%;
+    --critical: 0 84% 60%;
+    --critical-foreground: 0 0% 100%;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+
+    --success: 142 70% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 0%;
+    --critical: 0 72% 51%;
+    --critical-foreground: 0 0% 100%;
+  }
+
+  /* ────────────────────────────────────────────
+   * THEME: Rose (Warm Clinical)
+   * ──────────────────────────────────────────── */
+  [data-theme="rose"] {
+    --primary: 346.8 77.2% 49.8%;
+    --primary-foreground: 355.7 100% 97.3%;
+    --secondary: 340 4.8% 95%;
+    --secondary-foreground: 346 10% 22%;
+    --accent: 340 4.8% 95%;
+    --accent-foreground: 346 10% 22%;
+    --ring: 346.8 77.2% 49.8%;
+  }
+
+  .dark[data-theme="rose"],
+  .dark [data-theme="rose"] {
+    --primary: 346.8 77.2% 49.8%;
+    --primary-foreground: 355.7 100% 97.3%;
+    --secondary: 340 5% 16%;
+    --secondary-foreground: 340 5% 90%;
+    --accent: 340 5% 16%;
+    --accent-foreground: 340 5% 90%;
+    --ring: 346.8 77.2% 49.8%;
+  }
+
+  /* ────────────────────────────────────────────
+   * THEME: Blue (Trust / Calm)
+   * ──────────────────────────────────────────── */
+  [data-theme="blue"] {
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 214 10% 95%;
+    --secondary-foreground: 222 15% 20%;
+    --accent: 214 10% 95%;
+    --accent-foreground: 222 15% 20%;
+    --ring: 221.2 83.2% 53.3%;
+  }
+
+  .dark[data-theme="blue"],
+  .dark [data-theme="blue"] {
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217 10% 16%;
+    --secondary-foreground: 214 10% 90%;
+    --accent: 217 10% 16%;
+    --accent-foreground: 214 10% 90%;
+    --ring: 217.2 91.2% 59.8%;
+  }
+
+  /* ────────────────────────────────────────────
+   * THEME: Green (Health / Vitality)
+   * ──────────────────────────────────────────── */
+  [data-theme="green"] {
+    --primary: 142.1 76.2% 36.3%;
+    --primary-foreground: 355.7 100% 97.3%;
+    --secondary: 140 5% 94%;
+    --secondary-foreground: 142 10% 20%;
+    --accent: 140 5% 94%;
+    --accent-foreground: 142 10% 20%;
+    --ring: 142.1 76.2% 36.3%;
+  }
+
+  .dark[data-theme="green"],
+  .dark [data-theme="green"] {
+    --primary: 142.1 70.6% 45.3%;
+    --primary-foreground: 144.9 80.4% 10%;
+    --secondary: 140 5% 16%;
+    --secondary-foreground: 140 5% 90%;
+    --accent: 140 5% 16%;
+    --accent-foreground: 140 5% 90%;
+    --ring: 142.1 70.6% 45.3%;
+  }
+
+  /* ────────────────────────────────────────────
+   * THEME: Orange (Energetic)
+   * ──────────────────────────────────────────── */
+  [data-theme="orange"] {
+    --primary: 24.6 95% 53.1%;
+    --primary-foreground: 60 9.1% 97.8%;
+    --secondary: 30 5% 94%;
+    --secondary-foreground: 24 10% 20%;
+    --accent: 30 5% 94%;
+    --accent-foreground: 24 10% 20%;
+    --ring: 24.6 95% 53.1%;
+  }
+
+  .dark[data-theme="orange"],
+  .dark [data-theme="orange"] {
+    --primary: 20.5 90.2% 48.2%;
+    --primary-foreground: 60 9.1% 97.8%;
+    --secondary: 24 5% 16%;
+    --secondary-foreground: 24 5% 90%;
+    --accent: 24 5% 16%;
+    --accent-foreground: 24 5% 90%;
+    --ring: 20.5 90.2% 48.2%;
+  }
+
+  /* ────────────────────────────────────────────
+   * THEME: Violet (Modern / Premium)
+   * ──────────────────────────────────────────── */
+  [data-theme="violet"] {
+    --primary: 262.1 83.3% 57.8%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 260 5% 94%;
+    --secondary-foreground: 262 10% 20%;
+    --accent: 260 5% 94%;
+    --accent-foreground: 262 10% 20%;
+    --ring: 262.1 83.3% 57.8%;
+  }
+
+  .dark[data-theme="violet"],
+  .dark [data-theme="violet"] {
+    --primary: 263.4 70% 50.4%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 260 5% 16%;
+    --secondary-foreground: 260 5% 90%;
+    --accent: 260 5% 16%;
+    --accent-foreground: 260 5% 90%;
+    --ring: 263.4 70% 50.4%;
+  }
+
+  /* ────────────────────────────────────────────
+   * THEME: Teal (Medical Professional)
+   * ──────────────────────────────────────────── */
+  [data-theme="teal"] {
+    --primary: 172 66% 40%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 170 5% 94%;
+    --secondary-foreground: 172 10% 20%;
+    --accent: 170 5% 94%;
+    --accent-foreground: 172 10% 20%;
+    --ring: 172 66% 40%;
+  }
+
+  .dark[data-theme="teal"],
+  .dark [data-theme="teal"] {
+    --primary: 172 66% 50%;
+    --primary-foreground: 172 80% 8%;
+    --secondary: 170 5% 16%;
+    --secondary-foreground: 170 5% 90%;
+    --accent: 170 5% 16%;
+    --accent-foreground: 170 5% 90%;
+    --ring: 172 66% 50%;
+  }
+}
+
+/* ═══════════════════════════════════════════
+ * BASE STYLES
+ * ═══════════════════════════════════════════ */
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* ═══════════════════════════════════════════
+ * UTILITY CLASSES
+ * ═══════════════════════════════════════════ */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent;
+  }
+
+  .glass-panel {
+    @apply bg-card/80 backdrop-blur-xl border border-border/50;
+  }
+
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--muted)) 25%,
+      hsl(var(--muted-foreground) / 0.08) 50%,
+      hsl(var(--muted)) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+}
